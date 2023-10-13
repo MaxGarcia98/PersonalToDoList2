@@ -20,14 +20,6 @@ struct MainView: View {
             .navigationTitle(Text("My day"))
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-//                ToolbarItem(placement: .topBarTrailing) {
-//                    Button(action: {
-//                       
-////                        NavigationLink("", destination: SettingsView())
-//                    }, label: {
-//                        Image(systemName: "gearshape")
-//                    })}
-                
                 ToolbarItem(placement: .topBarLeading) {
                     Button(action: {}, label: {
                         Image(systemName: "square")

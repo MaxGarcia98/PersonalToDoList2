@@ -26,29 +26,76 @@ struct SettingsView: View {
                         List {
                             Section {
                                 HStack {
-                                    Image(systemName: "person.circle")
-                                    Text("Account")
+                                    NavigationLink(destination: AccountSettingsView()) {
+                                        Image(systemName: "person.circle")
+                                        Text("Account")
+                                    }
+                                    
                                 }
                                 
                                 HStack {
-                                    Image(systemName: "gearshape")
-                                    Text("General")
+                                    NavigationLink(destination: GeneralSettingsView()) {
+                                        Image(systemName: "gearshape")
+                                        Text("General")
+                                    }
                                 }
                             }
                             
                             Section {
-                                Text("hello")
+                                HStack {
+                                    NavigationLink(destination: ThemeSettingsView()) {
+                                        Image(systemName: "paintpalette")
+                                        Text("Theme")
+                                    }
+                                }
+                                HStack {
+                                    NavigationLink(destination: AppIconSettingsView()) {
+                                        Image(systemName: "switch.programmable.square.fill")
+                                        Text("App Icon")
+                                    }
+                                }
+                                HStack {
+                                    NavigationLink(destination: NavigationMenuSettingsView()) {
+                                        Image(systemName: "list.bullet")
+                                        Text("Navigation Menu")
+                                    }
+                                }
+                                HStack {
+                                    NavigationLink(destination: QuickAddSettingsView()) {
+                                        Image(systemName: "doc.fill.badge.plus")
+                                        Text("Quick Add")
+                                    }
+                                }
                             } header: {
                                 Text("Personalization")
                             }
-                        }
-                            .toolbar {
-                                Button("Save") {
-                                    settingsSheet = false
-                                }
+                            
+                            Section {
+                                Text("Productivity")
+                                Text("Notifications")
+                            } header: {
+                                Text("Personalization")
                             }
-                            .navigationTitle("Settings")
-                            .navigationBarTitleDisplayMode(.inline)
+                            
+                            Section {
+                                Text("Siri")
+                            }
+                            
+                            Section {
+                                Text("Help & Feedback")
+                                Text("About")
+                                Text("What's New")
+                                Text("Sync")
+                            }
+                            
+                        }
+                        .navigationTitle("Settings")
+                        .navigationBarTitleDisplayMode(.inline)
+                        .toolbar {
+                            Button("Done") {
+                                settingsSheet = false
+                            }
+                        }
                     }
                 }
         }
