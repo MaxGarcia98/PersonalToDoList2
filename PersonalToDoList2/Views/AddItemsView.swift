@@ -6,15 +6,16 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct AddItemsView: View {
-    
     @State var newToDo: String = ""
+//    @Environment(\.dismiss) var dismiss
+//    @EnvironmentObject var listViewModel: ListViewModel
     
     var body: some View {
         ScrollView {
             VStack {
-                Text("Add new items")
                 TextField("Add new todo...", text: $newToDo)
                     .padding(.horizontal)
                     .frame(height: 55)
@@ -34,7 +35,9 @@ struct AddItemsView: View {
             }
             .padding(14)
         }
-        
+//        func addNewItems() {
+//            Text("Hello")
+//        }
     }
 }
 
@@ -44,4 +47,5 @@ struct AddItemsView: View {
             .navigationTitle("Todolist")
             .navigationBarTitleDisplayMode(.inline)
     }
+//    .environmentObject(ListViewModel())
 }

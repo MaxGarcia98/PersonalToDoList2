@@ -11,6 +11,9 @@
 		3683A26C2AD9DC6A009588F8 /* AppIconSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3683A26B2AD9DC6A009588F8 /* AppIconSettingsView.swift */; };
 		3683A26E2AD9DC9F009588F8 /* NavigationMenuSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3683A26D2AD9DC9F009588F8 /* NavigationMenuSettingsView.swift */; };
 		3683A2702AD9DCD0009588F8 /* QuickAddSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3683A26F2AD9DCD0009588F8 /* QuickAddSettingsView.swift */; };
+		3683A2722AD9DF2E009588F8 /* ItemModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3683A2712AD9DF2E009588F8 /* ItemModel.swift */; };
+		3683A2742AD9E3E4009588F8 /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3683A2732AD9E3E4009588F8 /* ListViewModel.swift */; };
+		3683A2762AD9FD19009588F8 /* CircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3683A2752AD9FD19009588F8 /* CircleView.swift */; };
 		368E78732AD9A5EA00FF31DC /* PersonalToDoList2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368E78722AD9A5EA00FF31DC /* PersonalToDoList2App.swift */; };
 		368E78752AD9A5EA00FF31DC /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368E78742AD9A5EA00FF31DC /* MainView.swift */; };
 		368E78772AD9A5EB00FF31DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 368E78762AD9A5EB00FF31DC /* Assets.xcassets */; };
@@ -28,6 +31,9 @@
 		3683A26B2AD9DC6A009588F8 /* AppIconSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconSettingsView.swift; sourceTree = "<group>"; };
 		3683A26D2AD9DC9F009588F8 /* NavigationMenuSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationMenuSettingsView.swift; sourceTree = "<group>"; };
 		3683A26F2AD9DCD0009588F8 /* QuickAddSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuickAddSettingsView.swift; sourceTree = "<group>"; };
+		3683A2712AD9DF2E009588F8 /* ItemModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemModel.swift; sourceTree = "<group>"; };
+		3683A2732AD9E3E4009588F8 /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
+		3683A2752AD9FD19009588F8 /* CircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleView.swift; sourceTree = "<group>"; };
 		368E786F2AD9A5EA00FF31DC /* PersonalToDoList2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PersonalToDoList2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		368E78722AD9A5EA00FF31DC /* PersonalToDoList2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonalToDoList2App.swift; sourceTree = "<group>"; };
 		368E78742AD9A5EA00FF31DC /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -92,17 +98,18 @@
 		368E78802AD9A90400FF31DC /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				368E78742AD9A5EA00FF31DC /* MainView.swift */,
-				3683A2692AD9D6E2009588F8 /* ThemeSettingsView.swift */,
-				368E78852AD9AB1A00FF31DC /* AddItemsView.swift */,
-				368E78872AD9AFFF00FF31DC /* ListRowView.swift */,
 				368E788D2AD9D0A100FF31DC /* AccountSettingsView.swift */,
+				368E78852AD9AB1A00FF31DC /* AddItemsView.swift */,
+				3683A26B2AD9DC6A009588F8 /* AppIconSettingsView.swift */,
+				3683A2752AD9FD19009588F8 /* CircleView.swift */,
+				368E788B2AD9CCA800FF31DC /* GeneralSettingsView.swift */,
+				368E78872AD9AFFF00FF31DC /* ListRowView.swift */,
+				368E78742AD9A5EA00FF31DC /* MainView.swift */,
+				3683A26D2AD9DC9F009588F8 /* NavigationMenuSettingsView.swift */,
 				368E78832AD9A93300FF31DC /* NoItemsView.swift */,
 				3683A26F2AD9DCD0009588F8 /* QuickAddSettingsView.swift */,
-				368E788B2AD9CCA800FF31DC /* GeneralSettingsView.swift */,
-				3683A26B2AD9DC6A009588F8 /* AppIconSettingsView.swift */,
-				3683A26D2AD9DC9F009588F8 /* NavigationMenuSettingsView.swift */,
 				368E78892AD9B47800FF31DC /* SettingsView.swift */,
+				3683A2692AD9D6E2009588F8 /* ThemeSettingsView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -110,6 +117,7 @@
 		368E78812AD9A90900FF31DC /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				3683A2712AD9DF2E009588F8 /* ItemModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -117,6 +125,7 @@
 		368E78822AD9A90F00FF31DC /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
+				3683A2732AD9E3E4009588F8 /* ListViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -193,8 +202,11 @@
 			files = (
 				3683A26E2AD9DC9F009588F8 /* NavigationMenuSettingsView.swift in Sources */,
 				368E78752AD9A5EA00FF31DC /* MainView.swift in Sources */,
+				3683A2742AD9E3E4009588F8 /* ListViewModel.swift in Sources */,
+				3683A2722AD9DF2E009588F8 /* ItemModel.swift in Sources */,
 				3683A2702AD9DCD0009588F8 /* QuickAddSettingsView.swift in Sources */,
 				368E78732AD9A5EA00FF31DC /* PersonalToDoList2App.swift in Sources */,
+				3683A2762AD9FD19009588F8 /* CircleView.swift in Sources */,
 				368E78882AD9AFFF00FF31DC /* ListRowView.swift in Sources */,
 				368E788C2AD9CCA800FF31DC /* GeneralSettingsView.swift in Sources */,
 				3683A26A2AD9D6E2009588F8 /* ThemeSettingsView.swift in Sources */,
