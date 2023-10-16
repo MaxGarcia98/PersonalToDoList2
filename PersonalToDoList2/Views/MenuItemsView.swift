@@ -15,7 +15,6 @@ struct MenuItemsView: View {
         NavigationStack {
             
             ZStack {
-                Color.red.ignoresSafeArea()
                 
                 VStack {
                     Text("Content View")
@@ -25,8 +24,10 @@ struct MenuItemsView: View {
                     VStack {
                         SideMenuView()
                             .offset(x: menuOpened ? 0 : UIScreen.main.bounds.width)
+//                            .animation(.easeInOut, value: menuOpened)
                     }
                 }
+                .background(Color.black.opacity(menuOpened ? 0.5 : 0))
                 
             }
             .navigationTitle("Hello")
