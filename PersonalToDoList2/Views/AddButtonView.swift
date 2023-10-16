@@ -11,24 +11,29 @@ struct AddButtonView: View {
     
     @State var showAddSheet = false
     @State var buttonAnimation = false
+    let buttonPressed = UIImpactFeedbackGenerator(style: .heavy)
+    
+    init() {
+        buttonPressed.prepare()
+    }
     
     var body: some View {
         Button(action: {
             showAddSheet.toggle()
-         
+            buttonPressed.impactOccurred()
         }, label: {
             Image(systemName: "plus.circle.fill")
                 .resizable()
                 .scaledToFit()
                 .frame(width: 65, height: 65)
-                .foregroundStyle(Color(.secondaryLabel))
+                .foregroundStyle(Color.primary)
                 .fontWeight(.bold)
                 
     })
         .padding()
         .sheet(isPresented: $showAddSheet, content: {
             AddItemViewButton()
-                .presentationDetents([.fraction(0.15)])
+                .presentationDetents([.medium])
         })
     }
 }

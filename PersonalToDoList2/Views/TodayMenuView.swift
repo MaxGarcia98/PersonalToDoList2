@@ -36,7 +36,7 @@ struct TodayMenuView: View {
                     Image(systemName: "ellipsis")
                 }
                 ToolbarItem(placement: .topBarLeading) {
-                    MenuItemsView()
+//                    MenuItemsView()
                 }
             }
             

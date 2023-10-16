@@ -8,11 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		367286262ADD871D008F88C8 /* AddButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367286252ADD871D008F88C8 /* AddButtonView.swift */; };
-		367286282ADDAD25008F88C8 /* MenuItemsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367286272ADDAD25008F88C8 /* MenuItemsView.swift */; };
-		3672862A2ADDAE98008F88C8 /* AllMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367286292ADDAE98008F88C8 /* AllMenuView.swift */; };
 		3672862C2ADDAEB3008F88C8 /* TodayMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3672862B2ADDAEB3008F88C8 /* TodayMenuView.swift */; };
 		3672862E2ADDB4B6008F88C8 /* WelcomeMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3672862D2ADDB4B6008F88C8 /* WelcomeMenuView.swift */; };
-		367286302ADDB93A008F88C8 /* SideMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3672862F2ADDB93A008F88C8 /* SideMenuView.swift */; };
 		3683A26A2AD9D6E2009588F8 /* ThemeSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3683A2692AD9D6E2009588F8 /* ThemeSettingsView.swift */; };
 		3683A26C2AD9DC6A009588F8 /* AppIconSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3683A26B2AD9DC6A009588F8 /* AppIconSettingsView.swift */; };
 		3683A26E2AD9DC9F009588F8 /* NavigationMenuSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3683A26D2AD9DC9F009588F8 /* NavigationMenuSettingsView.swift */; };
@@ -32,11 +29,8 @@
 
 /* Begin PBXFileReference section */
 		367286252ADD871D008F88C8 /* AddButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButtonView.swift; sourceTree = "<group>"; };
-		367286272ADDAD25008F88C8 /* MenuItemsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemsView.swift; sourceTree = "<group>"; };
-		367286292ADDAE98008F88C8 /* AllMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllMenuView.swift; sourceTree = "<group>"; };
 		3672862B2ADDAEB3008F88C8 /* TodayMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayMenuView.swift; sourceTree = "<group>"; };
 		3672862D2ADDB4B6008F88C8 /* WelcomeMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeMenuView.swift; sourceTree = "<group>"; };
-		3672862F2ADDB93A008F88C8 /* SideMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuView.swift; sourceTree = "<group>"; };
 		3683A2692AD9D6E2009588F8 /* ThemeSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSettingsView.swift; sourceTree = "<group>"; };
 		3683A26B2AD9DC6A009588F8 /* AppIconSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconSettingsView.swift; sourceTree = "<group>"; };
 		3683A26D2AD9DC9F009588F8 /* NavigationMenuSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationMenuSettingsView.swift; sourceTree = "<group>"; };
@@ -107,21 +101,18 @@
 			isa = PBXGroup;
 			children = (
 				368E788D2AD9D0A100FF31DC /* AccountSettingsView.swift */,
-				3683A26B2AD9DC6A009588F8 /* AppIconSettingsView.swift */,
-				367286272ADDAD25008F88C8 /* MenuItemsView.swift */,
-				3672862D2ADDB4B6008F88C8 /* WelcomeMenuView.swift */,
-				3672862B2ADDAEB3008F88C8 /* TodayMenuView.swift */,
 				367286252ADD871D008F88C8 /* AddButtonView.swift */,
+				3683A26B2AD9DC6A009588F8 /* AppIconSettingsView.swift */,
 				368E788B2AD9CCA800FF31DC /* GeneralSettingsView.swift */,
 				368E78872AD9AFFF00FF31DC /* ListRowView.swift */,
-				367286292ADDAE98008F88C8 /* AllMenuView.swift */,
-				3672862F2ADDB93A008F88C8 /* SideMenuView.swift */,
 				368E78742AD9A5EA00FF31DC /* MainView.swift */,
 				3683A26D2AD9DC9F009588F8 /* NavigationMenuSettingsView.swift */,
 				368E78832AD9A93300FF31DC /* NoItemsView.swift */,
 				3683A26F2AD9DCD0009588F8 /* QuickAddSettingsView.swift */,
 				368E78892AD9B47800FF31DC /* SettingsView.swift */,
 				3683A2692AD9D6E2009588F8 /* ThemeSettingsView.swift */,
+				3672862B2ADDAEB3008F88C8 /* TodayMenuView.swift */,
+				3672862D2ADDB4B6008F88C8 /* WelcomeMenuView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -216,10 +207,8 @@
 				3683A26E2AD9DC9F009588F8 /* NavigationMenuSettingsView.swift in Sources */,
 				368E78752AD9A5EA00FF31DC /* MainView.swift in Sources */,
 				3683A2742AD9E3E4009588F8 /* ListViewModel.swift in Sources */,
-				367286302ADDB93A008F88C8 /* SideMenuView.swift in Sources */,
 				3683A2722AD9DF2E009588F8 /* ItemModel.swift in Sources */,
 				3683A2702AD9DCD0009588F8 /* QuickAddSettingsView.swift in Sources */,
-				3672862A2ADDAE98008F88C8 /* AllMenuView.swift in Sources */,
 				368E78732AD9A5EA00FF31DC /* PersonalToDoList2App.swift in Sources */,
 				368E78882AD9AFFF00FF31DC /* ListRowView.swift in Sources */,
 				368E788C2AD9CCA800FF31DC /* GeneralSettingsView.swift in Sources */,
@@ -229,7 +218,6 @@
 				368E788E2AD9D0A100FF31DC /* AccountSettingsView.swift in Sources */,
 				368E78842AD9A93300FF31DC /* NoItemsView.swift in Sources */,
 				3683A26C2AD9DC6A009588F8 /* AppIconSettingsView.swift in Sources */,
-				367286282ADDAD25008F88C8 /* MenuItemsView.swift in Sources */,
 				367286262ADD871D008F88C8 /* AddButtonView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

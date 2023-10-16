@@ -18,7 +18,7 @@ struct SettingsView: View {
                             settingsSheet = true
                         }, label: {
                             Image(systemName: "gearshape")
-                                .foregroundStyle(Color(.secondaryLabel))
+                                .foregroundStyle(Color.primary)
                                 .fontWeight(.bold)
                         })
                     }

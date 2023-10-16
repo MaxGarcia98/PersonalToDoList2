@@ -16,6 +16,7 @@ struct MainView: View {
                 ForEach(items, id: \.self) { item in
                     ListRowView(title: item)
                 }
+                
                 .onDelete(perform: deleteItem)
                 .onMove(perform: moveItem)
             }
@@ -24,18 +25,19 @@ struct MainView: View {
         .navigationTitle(Text("My day"))
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-//            ToolbarItem(placement: .topBarLeading) {
-//                Button(action: {
-//                    
-//                }, label: {
-//                    Image(systemName: "line.3.horizontal")
-//                })
-//            }
-            MenuItemsView()
-//            ToolbarItem(placement: .topBarLeading) {
-//                EditButton()
-//            }
+            ToolbarItem(placement: .topBarLeading) {
+                Button(action: {
+                    
+                }, label: {
+                    Image(systemName: "line.3.horizontal")
+                })
+            }
+            ToolbarItem(placement: .topBarLeading) {
+                EditButton()
+            }
         }
+        .foregroundStyle(.primary)
+        
         
         ZStack(alignment: .bottomTrailing) {
             HStack {
