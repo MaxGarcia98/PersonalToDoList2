@@ -11,30 +11,34 @@ struct MainView: View {
     var body: some View {
         NavigationStack {
             SettingsView()
-            
-        ZStack {
-            List {
-                ForEach(items, id: \.self) { item in
-                    ListRowView(title: item)
-                        .listRowBackground(Color.secondary.opacity(0.3))
+                
+            ZStack {
+                
+                List {
+                    ForEach(items, id: \.self) { item in
+                        ListRowView(title: item)
+                            .listRowBackground(Color.secondary.opacity(0.3))
+                    }
+                    .onDelete(perform: deleteItem)
+                    .onMove(perform: moveItem)
                 }
                 
-                .onDelete(perform: deleteItem)
-                .onMove(perform: moveItem)
                 
-                
-            }
-            HStack(alignment: .bottom) {
-                Spacer()
-                VStack {
+                HStack(alignment: .bottom) {
                     Spacer()
-                    AddButtonView()
+                    VStack {
+                        Spacer()
+                        AddButtonView()
+//                            .padding(.bottom, 40)
+                    }
                 }
             }
-        }
             .listStyle(.sidebar)
-            .searchable(text: $searchedText)
+            
+          
+           
         }
+        
         .navigationTitle(Text("My day"))
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
@@ -45,9 +49,9 @@ struct MainView: View {
                     Image(systemName: "line.3.horizontal")
                 })
             }
-            ToolbarItem(placement: .topBarLeading) {
-                EditButton()
-            }
+//            ToolbarItem(placement: .topBarLeading) {
+//                EditButton()
+//            }
         }
         .foregroundStyle(.primary)
     }

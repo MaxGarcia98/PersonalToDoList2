@@ -28,6 +28,7 @@ struct AddButtonView: View {
                 .frame(width: 65, height: 65)
                 .foregroundStyle(Color.primary)
                 .fontWeight(.bold)
+                .opacity(0.75)
                 
     })
         .padding()

@@ -25,12 +25,15 @@ struct SettingsView: View {
                 }
                 .sheet(isPresented: $settingsSheet) {
                     NavigationStack {
+                        
                         List {
+                            
                             Section {
                                 HStack {
                                     NavigationLink(destination: AccountSettingsView()) {
                                         Image(systemName: "person.circle")
                                         Text("Account")
+                                        
                                     }
                                     
                                 }
@@ -42,6 +45,7 @@ struct SettingsView: View {
                                     }
                                 }
                             }
+                            
                             
                             Section {
                                 HStack {
@@ -91,18 +95,24 @@ struct SettingsView: View {
                             }
                             
                         }
+                        
                         .navigationTitle("Settings")
                         .navigationBarTitleDisplayMode(.inline)
+                        
                         .toolbar {
                             Button("Done") {
                                 settingsSheet = false
                             }
                         }
+                        
                     }
                 }
+            
+            
         }
     }
 }
+
 
 #Preview {
     NavigationStack {

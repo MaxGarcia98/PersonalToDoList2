@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3613A14B2ADDD6C8005CFB95 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3613A14A2ADDD6C8005CFB95 /* CalendarView.swift */; };
+		3613A14D2ADDDD3F005CFB95 /* ImportantToDosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3613A14C2ADDDD3F005CFB95 /* ImportantToDosView.swift */; };
 		367286262ADD871D008F88C8 /* AddButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367286252ADD871D008F88C8 /* AddButtonView.swift */; };
 		3672862C2ADDAEB3008F88C8 /* TodayMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3672862B2ADDAEB3008F88C8 /* TodayMenuView.swift */; };
 		3672862E2ADDB4B6008F88C8 /* WelcomeMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3672862D2ADDB4B6008F88C8 /* WelcomeMenuView.swift */; };
@@ -30,6 +31,7 @@
 
 /* Begin PBXFileReference section */
 		3613A14A2ADDD6C8005CFB95 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
+		3613A14C2ADDDD3F005CFB95 /* ImportantToDosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportantToDosView.swift; sourceTree = "<group>"; };
 		367286252ADD871D008F88C8 /* AddButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButtonView.swift; sourceTree = "<group>"; };
 		3672862B2ADDAEB3008F88C8 /* TodayMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayMenuView.swift; sourceTree = "<group>"; };
 		3672862D2ADDB4B6008F88C8 /* WelcomeMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeMenuView.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				368E788D2AD9D0A100FF31DC /* AccountSettingsView.swift */,
 				367286252ADD871D008F88C8 /* AddButtonView.swift */,
 				3613A14A2ADDD6C8005CFB95 /* CalendarView.swift */,
+				3613A14C2ADDDD3F005CFB95 /* ImportantToDosView.swift */,
 				3683A26B2AD9DC6A009588F8 /* AppIconSettingsView.swift */,
 				368E788B2AD9CCA800FF31DC /* GeneralSettingsView.swift */,
 				368E78872AD9AFFF00FF31DC /* ListRowView.swift */,
@@ -217,6 +220,7 @@
 				368E78882AD9AFFF00FF31DC /* ListRowView.swift in Sources */,
 				368E788C2AD9CCA800FF31DC /* GeneralSettingsView.swift in Sources */,
 				3683A26A2AD9D6E2009588F8 /* ThemeSettingsView.swift in Sources */,
+				3613A14D2ADDDD3F005CFB95 /* ImportantToDosView.swift in Sources */,
 				3672862C2ADDAEB3008F88C8 /* TodayMenuView.swift in Sources */,
 				368E788A2AD9B47800FF31DC /* SettingsView.swift in Sources */,
 				368E788E2AD9D0A100FF31DC /* AccountSettingsView.swift in Sources */,
