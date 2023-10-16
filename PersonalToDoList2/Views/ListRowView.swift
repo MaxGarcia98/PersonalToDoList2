@@ -18,6 +18,7 @@ struct ListRowView: View {
             Spacer()
         }
         .padding()
+        
     }
 }
 

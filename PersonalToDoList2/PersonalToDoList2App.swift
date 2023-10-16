@@ -12,7 +12,9 @@ import SwiftData
 struct PersonalToDoList2App: App {
     var body: some Scene {
         WindowGroup {
-            MainView()
+            NavigationStack {
+                MainView()
+            }
         }
     }
 }

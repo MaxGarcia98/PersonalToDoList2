@@ -19,7 +19,7 @@ struct NoItemsView: View {
                     .font(.title2)
                     .fontWeight(.semibold)
                 Spacer()
-                NavigationLink(destination: AddItemsView()) {
+                NavigationLink(destination: AddButtonView()) {
                     Text("Add something to your list!")
                         .font(.headline)
                         .fontWeight(.semibold)
@@ -31,7 +31,6 @@ struct NoItemsView: View {
                 }
             }
         }
-
     }
 }
 

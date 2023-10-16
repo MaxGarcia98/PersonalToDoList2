@@ -18,6 +18,8 @@ struct SettingsView: View {
                             settingsSheet = true
                         }, label: {
                             Image(systemName: "gearshape")
+                                .foregroundStyle(Color(.secondaryLabel))
+                                .fontWeight(.bold)
                         })
                     }
                 }

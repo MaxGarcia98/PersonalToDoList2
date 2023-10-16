@@ -3,54 +3,60 @@ import SwiftUI
 struct MainView: View {
     
     @State var settingsToggle: Bool = false
+    @State var searchedText = ""
     @State var items: [String] = [
         "first", "second", "third"
     ]
     
     var body: some View {
         NavigationStack {
-            if items.isEmpty {
-                NoItemsView()
-            } else {
-                List {
-                    ForEach(items, id: \.self) { item in
-                        ListRowView(title: item)
-                    }
-                    .onDelete(perform: deleteItem)
-                    .onMove(perform: moveItem)
-                }
-            }
             SettingsView()
-            CircleView()
+            
+            List {
+                ForEach(items, id: \.self) { item in
+                    ListRowView(title: item)
+                }
+                .onDelete(perform: deleteItem)
+                .onMove(perform: moveItem)
+            }
+            .searchable(text: $searchedText)
         }
         .navigationTitle(Text("My day"))
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
-            ToolbarItem(placement: .topBarLeading) {
-                EditButton()
-            }
-            
-            ToolbarItem(placement: .topBarTrailing) {
-                NavigationLink("Add", destination: AddItemsView())
+//            ToolbarItem(placement: .topBarLeading) {
+//                Button(action: {
+//                    
+//                }, label: {
+//                    Image(systemName: "line.3.horizontal")
+//                })
+//            }
+            MenuItemsView()
+//            ToolbarItem(placement: .topBarLeading) {
+//                EditButton()
+//            }
+        }
+        
+        ZStack(alignment: .bottomTrailing) {
+            HStack {
+                Spacer()
+                VStack {
+                    Spacer()
+                    AddButtonView()
+                }
             }
         }
-//        .sheet(isPresented: $settingsToggle) {
-//            NavigationStack {
-//                Text("Settings")
-//            }
-            
-        
-        
     }
     
-        func deleteItem(indexSet: IndexSet) {
-            items.remove(atOffsets: indexSet)
-        }
-        
-        func moveItem(from: IndexSet, to: Int) {
-            items.move(fromOffsets: from, toOffset: to)
-        }
     
+    func deleteItem(indexSet: IndexSet) {
+        items.remove(atOffsets: indexSet)
+    }
+    
+    func moveItem(from: IndexSet, to: Int) {
+        items.move(fromOffsets: from, toOffset: to)
+    }
+
 }
 
 #Preview {
