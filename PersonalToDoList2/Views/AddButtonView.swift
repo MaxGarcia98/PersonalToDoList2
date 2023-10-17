@@ -86,6 +86,10 @@ struct AddItemViewButton: View {
                 )
                 
                 Menu {
+                    
+                    Section {
+                        Button("None") {}
+                    }
                     Button("Low") {}
                     Button("Medium") {}
                     Button("High") {}
@@ -113,11 +117,17 @@ struct AddItemViewButton: View {
                         .stroke(Color(.systemGray2), lineWidth: 0.5)
                 )
                 
-                Button(action: {
+                Menu {
+                    Section {
+                        Button("Edit Task Actions") {}
+                    }
                     
-                }, label: {
-                    Image(systemName: "ellipsis")
-                })
+                    Button("Label") {}
+                    Button("Location") {}
+                    
+                } label: {
+                    Label("", systemImage: "ellipsis")
+                }
                 .foregroundStyle(Color(.systemGray2))
                 .frame(height:20)
                 .padding(2)
@@ -125,6 +135,7 @@ struct AddItemViewButton: View {
                     RoundedRectangle(cornerRadius: 5)
                         .stroke(Color(.systemGray2), lineWidth: 0.5)
                 )
+                
                 Spacer()
             }
             .padding(8)
