@@ -52,9 +52,10 @@ struct AddItemViewButton: View {
     
     var body: some View {
         
-        VStack(spacing:-20) {
-            HStack {
+        VStack(spacing: -10) {
                 TextField("What would you like to add?", text: $addLikeToDoText)
+                .font(.title2)
+                .fontWeight(.semibold)
                     .focused($keyboardFocused)
                     .onAppear {
                         DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
@@ -62,27 +63,111 @@ struct AddItemViewButton: View {
                         }
                     }
                     .padding(8)
-                Image(systemName: "arrow.down.left.and.arrow.up.right")
-                    .foregroundStyle(Color(.systemGray2))
-                    .padding()
-            }
-            
-
+    
             TextField("Description", text: $descriptionText)
-                .font(.subheadline)
+                .font(.headline)
+                .fontWeight(.medium)
                 .padding(8)
+            
+            HStack {
+                Button(action: {
+                  
+                }, label: {
+                    Image(systemName: "calendar")
+                    Text("No date")
+                        
+                })
+                .foregroundStyle(Color(.systemGray2))
+                .frame(height:20)
+                .padding(2)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 5)
+                        .stroke(Color(.systemGray2), lineWidth: 0.5)
+                )
+                
+                Menu {
+                    Button("Low") {}
+                    Button("Medium") {}
+                    Button("High") {}
+                } label: {
+                     Label("Priority", systemImage: "flag")
+                }
+                .foregroundStyle(Color(.systemGray2))
+                .frame(height:20)
+                .padding(2)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 5)
+                        .stroke(Color(.systemGray2), lineWidth: 0.5)
+                )
+                
+                Menu {
+                    Button("High") {}
+                } label: {
+                    Label("Reminder", systemImage: "alarm")
+                }
+                .foregroundStyle(Color(.systemGray2))
+                .frame(height:20)
+                .padding(2)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 5)
+                        .stroke(Color(.systemGray2), lineWidth: 0.5)
+                )
+                
+                Button(action: {
+                    
+                }, label: {
+                    Image(systemName: "ellipsis")
+                })
+                .foregroundStyle(Color(.systemGray2))
+                .frame(height:20)
+                .padding(2)
+                .overlay(
+                    RoundedRectangle(cornerRadius: 5)
+                        .stroke(Color(.systemGray2), lineWidth: 0.5)
+                )
+                Spacer()
+            }
+            .padding(8)
+//            HStack {
+//                Menu("Priority") {
+//                    Button("button", action: choosePriority)
+//                }
+//                .font(.subheadline)
+//                .foregroundStyle(Color(.systemGray2))
+//                Spacer()
+//            }
+//            .padding(8)
+            
+            Divider()
+                .background(Color(.systemGray2))
+                .padding(8)
+            Spacer()
+            
         }
         
-        HStack {
-            Image(systemName: "calendar")
-            Image(systemName: "flag.fill")
-            Image(systemName: "tag.fill")
-            Spacer()
-            Image(systemName: "paperplane.fill")
-        }
-        .padding()
-        .foregroundStyle(Color(.systemGray2))
+        
+            .ignoresSafeArea(.keyboard)
+        
+        
+        
+        
+        
+        
+        
+        
+        
+//        HStack {
+//            Image(systemName: "calendar")
+//            Image(systemName: "flag.fill")
+//            Image(systemName: "tag.fill")
+//            Spacer()
+//            Image(systemName: "paperplane.fill")
+//        }
+//        .padding()
+//        .foregroundStyle(Color(.systemGray2))
     }
+    
+    func choosePriority() {}
 }
 
 
