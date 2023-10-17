@@ -7,22 +7,22 @@ struct MainView: View {
     @State var items: [String] = [
         "first", "second", "third", "fourth", "fifth", "first", "second", "third", "fourth",
     ]
+    @State var toDoAdd = [toDoList]
+    let todos = toDoList
     
     var body: some View {
         NavigationStack {
             SettingsView()
                 
             ZStack {
-                
                 List {
-                    ForEach(items, id: \.self) { item in
-                        ListRowView(title: item)
-                            .listRowBackground(Color.secondary.opacity(0.3))
+                    ForEach(todos, id: \.self) { todo in
+                        NavigationLink(destination: Text(todo)) {
+                            Image(systemName: "heart")
+                            Text(todo)
+                        }
                     }
-                    .onDelete(perform: deleteItem)
-                    .onMove(perform: moveItem)
                 }
-                
                 
                 HStack(alignment: .bottom) {
                     Spacer()
@@ -58,11 +58,11 @@ struct MainView: View {
     
     
     func deleteItem(indexSet: IndexSet) {
-        items.remove(atOffsets: indexSet)
+        toDoAdd.remove(atOffsets: indexSet)
     }
     
     func moveItem(from: IndexSet, to: Int) {
-        items.move(fromOffsets: from, toOffset: to)
+        toDoAdd.move(fromOffsets: from, toOffset: to)
     }
 
 }

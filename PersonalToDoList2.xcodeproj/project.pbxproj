@@ -27,6 +27,7 @@
 		368E788A2AD9B47800FF31DC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368E78892AD9B47800FF31DC /* SettingsView.swift */; };
 		368E788C2AD9CCA800FF31DC /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368E788B2AD9CCA800FF31DC /* GeneralSettingsView.swift */; };
 		368E788E2AD9D0A100FF31DC /* AccountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368E788D2AD9D0A100FF31DC /* AccountSettingsView.swift */; };
+		36F99F8D2ADF276400C5809F /* ToDo'sList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F99F8C2ADF276400C5809F /* ToDo'sList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -51,6 +52,7 @@
 		368E78892AD9B47800FF31DC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		368E788B2AD9CCA800FF31DC /* GeneralSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
 		368E788D2AD9D0A100FF31DC /* AccountSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsView.swift; sourceTree = "<group>"; };
+		36F99F8C2ADF276400C5809F /* ToDo'sList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDo'sList.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 				368E788D2AD9D0A100FF31DC /* AccountSettingsView.swift */,
 				367286252ADD871D008F88C8 /* AddButtonView.swift */,
 				3613A14A2ADDD6C8005CFB95 /* CalendarView.swift */,
+				36F99F8C2ADF276400C5809F /* ToDo'sList.swift */,
 				3613A14C2ADDDD3F005CFB95 /* ImportantToDosView.swift */,
 				3683A26B2AD9DC6A009588F8 /* AppIconSettingsView.swift */,
 				368E788B2AD9CCA800FF31DC /* GeneralSettingsView.swift */,
@@ -219,6 +222,7 @@
 				368E78732AD9A5EA00FF31DC /* PersonalToDoList2App.swift in Sources */,
 				368E78882AD9AFFF00FF31DC /* ListRowView.swift in Sources */,
 				368E788C2AD9CCA800FF31DC /* GeneralSettingsView.swift in Sources */,
+				36F99F8D2ADF276400C5809F /* ToDo'sList.swift in Sources */,
 				3683A26A2AD9D6E2009588F8 /* ThemeSettingsView.swift in Sources */,
 				3613A14D2ADDDD3F005CFB95 /* ImportantToDosView.swift in Sources */,
 				3672862C2ADDAEB3008F88C8 /* TodayMenuView.swift in Sources */,

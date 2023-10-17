@@ -53,29 +53,36 @@ struct AddItemViewButton: View {
     var body: some View {
         
         VStack(spacing: -10) {
-                TextField("What would you like to add?", text: $addLikeToDoText)
+            TextField("What would you like to add?", text: $addLikeToDoText, axis: .vertical)
+                .submitLabel(.done)
                 .font(.title2)
                 .fontWeight(.semibold)
-                    .focused($keyboardFocused)
-                    .onAppear {
-                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
-                            keyboardFocused = true
-                        }
+                .focused($keyboardFocused)
+                .onAppear {
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
+                        keyboardFocused = true
                     }
-                    .padding(8)
-    
-            TextField("Description", text: $descriptionText)
+                    
+                }
+                .padding(12)
+            
+            TextField("Description", text: $descriptionText, axis: .vertical)
+                .submitLabel(.done)
                 .font(.headline)
-                .fontWeight(.medium)
-                .padding(8)
+                .fontWeight(.light)
+                .padding(12)
+            
+            Spacer()
+                .frame(height: 40)
             
             HStack {
+                // CALENDER button //
                 Button(action: {
-                  
+                    
                 }, label: {
                     Image(systemName: "calendar")
                     Text("No date")
-                        
+                    
                 })
                 .foregroundStyle(Color(.systemGray2))
                 .frame(height:20)
@@ -85,8 +92,8 @@ struct AddItemViewButton: View {
                         .stroke(Color(.systemGray2), lineWidth: 0.5)
                 )
                 
+                // Menu section for the PRIORITY button //
                 Menu {
-                    
                     Section {
                         Button("None") {}
                     }
@@ -94,7 +101,7 @@ struct AddItemViewButton: View {
                     Button("Medium") {}
                     Button("High") {}
                 } label: {
-                     Label("Priority", systemImage: "flag")
+                    Label("Priority", systemImage: "flag")
                 }
                 .foregroundStyle(Color(.systemGray2))
                 .frame(height:20)
@@ -104,6 +111,7 @@ struct AddItemViewButton: View {
                         .stroke(Color(.systemGray2), lineWidth: 0.5)
                 )
                 
+                // Menu section for the REMINDER button //
                 Menu {
                     Button("High") {}
                 } label: {
@@ -117,6 +125,7 @@ struct AddItemViewButton: View {
                         .stroke(Color(.systemGray2), lineWidth: 0.5)
                 )
                 
+                // Menu section for the MORE button //
                 Menu {
                     Section {
                         Button("Edit Task Actions") {}
@@ -139,49 +148,41 @@ struct AddItemViewButton: View {
                 Spacer()
             }
             .padding(8)
-//            HStack {
-//                Menu("Priority") {
-//                    Button("button", action: choosePriority)
-//                }
-//                .font(.subheadline)
-//                .foregroundStyle(Color(.systemGray2))
-//                Spacer()
-//            }
-//            .padding(8)
+            //            HStack {
+            //                Menu("Priority") {
+            //                    Button("button", action: choosePriority)
+            //                }
+            //                .font(.subheadline)
+            //                .foregroundStyle(Color(.systemGray2))
+            //                Spacer()
+            //            }
+            //            .padding(8)
+            
+            Spacer()
+                .frame(height: 20)
             
             Divider()
                 .background(Color(.systemGray2))
-                .padding(8)
+            
             Spacer()
             
         }
         
-        
-            .ignoresSafeArea(.keyboard)
-        
-        
-        
-        
-        
-        
-        
-        
-        
-//        HStack {
-//            Image(systemName: "calendar")
-//            Image(systemName: "flag.fill")
-//            Image(systemName: "tag.fill")
-//            Spacer()
-//            Image(systemName: "paperplane.fill")
-//        }
-//        .padding()
-//        .foregroundStyle(Color(.systemGray2))
+        //        HStack {
+        //            Image(systemName: "calendar")
+        //            Image(systemName: "flag.fill")
+        //            Image(systemName: "tag.fill")
+        //            Spacer()
+        //            Image(systemName: "paperplane.fill")
+        //        }
+        //        .padding()
+        //        .foregroundStyle(Color(.systemGray2))
     }
     
     func choosePriority() {}
+    
+    
 }
-
-
 #Preview {
     AddButtonView()
 }
