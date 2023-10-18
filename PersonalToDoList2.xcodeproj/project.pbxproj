@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		3613A14B2ADDD6C8005CFB95 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3613A14A2ADDD6C8005CFB95 /* CalendarView.swift */; };
 		3613A14D2ADDDD3F005CFB95 /* ImportantToDosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3613A14C2ADDDD3F005CFB95 /* ImportantToDosView.swift */; };
+		36407C382AE04FAC00E4C5ED /* mock.json in Resources */ = {isa = PBXBuildFile; fileRef = 36407C372AE04FAC00E4C5ED /* mock.json */; };
 		367286262ADD871D008F88C8 /* AddButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 367286252ADD871D008F88C8 /* AddButtonView.swift */; };
-		3672862C2ADDAEB3008F88C8 /* TodayMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3672862B2ADDAEB3008F88C8 /* TodayMenuView.swift */; };
+		3672862C2ADDAEB3008F88C8 /* TodayListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3672862B2ADDAEB3008F88C8 /* TodayListView.swift */; };
 		3672862E2ADDB4B6008F88C8 /* WelcomeMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3672862D2ADDB4B6008F88C8 /* WelcomeMenuView.swift */; };
 		3683A26A2AD9D6E2009588F8 /* ThemeSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3683A2692AD9D6E2009588F8 /* ThemeSettingsView.swift */; };
 		3683A26C2AD9DC6A009588F8 /* AppIconSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3683A26B2AD9DC6A009588F8 /* AppIconSettingsView.swift */; };
@@ -33,8 +34,9 @@
 /* Begin PBXFileReference section */
 		3613A14A2ADDD6C8005CFB95 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		3613A14C2ADDDD3F005CFB95 /* ImportantToDosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportantToDosView.swift; sourceTree = "<group>"; };
+		36407C372AE04FAC00E4C5ED /* mock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mock.json; sourceTree = "<group>"; };
 		367286252ADD871D008F88C8 /* AddButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddButtonView.swift; sourceTree = "<group>"; };
-		3672862B2ADDAEB3008F88C8 /* TodayMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayMenuView.swift; sourceTree = "<group>"; };
+		3672862B2ADDAEB3008F88C8 /* TodayListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayListView.swift; sourceTree = "<group>"; };
 		3672862D2ADDB4B6008F88C8 /* WelcomeMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeMenuView.swift; sourceTree = "<group>"; };
 		3683A2692AD9D6E2009588F8 /* ThemeSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeSettingsView.swift; sourceTree = "<group>"; };
 		3683A26B2AD9DC6A009588F8 /* AppIconSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppIconSettingsView.swift; sourceTree = "<group>"; };
@@ -87,6 +89,7 @@
 			children = (
 				368E78722AD9A5EA00FF31DC /* PersonalToDoList2App.swift */,
 				368E78762AD9A5EB00FF31DC /* Assets.xcassets */,
+				36407C372AE04FAC00E4C5ED /* mock.json */,
 				368E78782AD9A5EB00FF31DC /* Preview Content */,
 				368E78812AD9A90900FF31DC /* Models */,
 				368E78822AD9A90F00FF31DC /* ViewModels */,
@@ -120,7 +123,7 @@
 				3683A26F2AD9DCD0009588F8 /* QuickAddSettingsView.swift */,
 				368E78892AD9B47800FF31DC /* SettingsView.swift */,
 				3683A2692AD9D6E2009588F8 /* ThemeSettingsView.swift */,
-				3672862B2ADDAEB3008F88C8 /* TodayMenuView.swift */,
+				3672862B2ADDAEB3008F88C8 /* TodayListView.swift */,
 				3672862D2ADDB4B6008F88C8 /* WelcomeMenuView.swift */,
 			);
 			path = Views;
@@ -200,6 +203,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				36407C382AE04FAC00E4C5ED /* mock.json in Resources */,
 				368E787A2AD9A5EB00FF31DC /* Preview Assets.xcassets in Resources */,
 				368E78772AD9A5EB00FF31DC /* Assets.xcassets in Resources */,
 			);
@@ -225,7 +229,7 @@
 				36F99F8D2ADF276400C5809F /* ToDo'sList.swift in Sources */,
 				3683A26A2AD9D6E2009588F8 /* ThemeSettingsView.swift in Sources */,
 				3613A14D2ADDDD3F005CFB95 /* ImportantToDosView.swift in Sources */,
-				3672862C2ADDAEB3008F88C8 /* TodayMenuView.swift in Sources */,
+				3672862C2ADDAEB3008F88C8 /* TodayListView.swift in Sources */,
 				368E788A2AD9B47800FF31DC /* SettingsView.swift in Sources */,
 				368E788E2AD9D0A100FF31DC /* AccountSettingsView.swift in Sources */,
 				368E78842AD9A93300FF31DC /* NoItemsView.swift in Sources */,

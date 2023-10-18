@@ -6,9 +6,9 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct AddButtonView: View {
-    
     @State var showAddSheet = false
     @State var buttonAnimation = false
     let buttonPressed = UIImpactFeedbackGenerator(style: .heavy)
@@ -36,6 +36,7 @@ struct AddButtonView: View {
             AddItemViewButton()
                 .presentationDetents([.medium])
         })
+       
     }
 }
 
@@ -48,7 +49,10 @@ struct AddItemViewButton: View {
     @State var datePicked: Date = .now
     @State var addLikeToDoText: String = ""
     @State var descriptionText: String = ""
+   
     @FocusState private var keyboardFocused: Bool
+//    @State var userAddedToDoArray: [String] = []
+//    @State var userAddedToDo = ""
     
     var body: some View {
         
@@ -78,19 +82,13 @@ struct AddItemViewButton: View {
             HStack {
                 // CALENDER button //
                 Button(action: {
-                    
+ 
                 }, label: {
                     Image(systemName: "calendar")
                     Text("No date")
                     
                 })
-                .foregroundStyle(Color(.systemGray2))
-                .frame(height:20)
-                .padding(2)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 5)
-                        .stroke(Color(.systemGray2), lineWidth: 0.5)
-                )
+                .modifier(MenuButtonStyle())
                 
                 // Menu section for the PRIORITY button //
                 Menu {
@@ -103,13 +101,7 @@ struct AddItemViewButton: View {
                 } label: {
                     Label("Priority", systemImage: "flag")
                 }
-                .foregroundStyle(Color(.systemGray2))
-                .frame(height:20)
-                .padding(2)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 5)
-                        .stroke(Color(.systemGray2), lineWidth: 0.5)
-                )
+                .modifier(MenuButtonStyle())
                 
                 // Menu section for the REMINDER button //
                 Menu {
@@ -117,13 +109,7 @@ struct AddItemViewButton: View {
                 } label: {
                     Label("Reminder", systemImage: "alarm")
                 }
-                .foregroundStyle(Color(.systemGray2))
-                .frame(height:20)
-                .padding(2)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 5)
-                        .stroke(Color(.systemGray2), lineWidth: 0.5)
-                )
+                .modifier(MenuButtonStyle())
                 
                 // Menu section for the MORE button //
                 Menu {
@@ -137,13 +123,7 @@ struct AddItemViewButton: View {
                 } label: {
                     Label("", systemImage: "ellipsis")
                 }
-                .foregroundStyle(Color(.systemGray2))
-                .frame(height:20)
-                .padding(2)
-                .overlay(
-                    RoundedRectangle(cornerRadius: 5)
-                        .stroke(Color(.systemGray2), lineWidth: 0.5)
-                )
+                .modifier(MenuButtonStyle())
                 
                 Spacer()
             }
@@ -166,6 +146,9 @@ struct AddItemViewButton: View {
             
             Spacer()
             
+//            ForEach(userAddedToDoArray, id: \.self) { item in
+//                Text(userAddedToDo)
+//            }
         }
         
         //        HStack {
@@ -179,10 +162,25 @@ struct AddItemViewButton: View {
         //        .foregroundStyle(Color(.systemGray2))
     }
     
-    func choosePriority() {}
-    
-    
+    func saveToDo() {
+        
+    }
 }
+
+struct MenuButtonStyle: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .foregroundStyle(Color(.systemGray2))
+            .frame(height:20)
+            .padding(2)
+            .overlay(
+                RoundedRectangle(cornerRadius: 5)
+                    .stroke(Color(.systemGray2), lineWidth: 0.5)
+            )
+    }
+}
+
 #Preview {
     AddButtonView()
+        .modelContainer(for: toDoItem.self)
 }

@@ -1,19 +1,20 @@
 import Foundation
+import SwiftData
 
-// Immutable Struct
-
-struct ItemModel: Identifiable, Codable {
-    let id: String
-    let title: String
-    let isCompleted: Bool
+@Model
+final class toDoItem {
+    var title: String
+    var timestamp: Date
+    var isCritical: Bool
+    var isCompleted: Bool
     
-    init(id: String = UUID().uuidString, title: String, isCompleted: Bool) {
-        self.id = UUID().uuidString
+    init(title: String = "",
+         timestamp: Date = .now,
+         isCritical: Bool = false,
+         isCompleted: Bool = false) {
         self.title = title
+        self.timestamp = timestamp
+        self.isCritical = isCritical
         self.isCompleted = isCompleted
-    }
-    
-    func updateCompletion() -> ItemModel {
-        return ItemModel(id: id, title: title, isCompleted: !isCompleted)
     }
 }
