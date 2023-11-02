@@ -8,6 +8,9 @@ struct MainView: View {
     @State var searchedText = ""
     @State var item: [ItemModel] = [
         ItemModel(title: "First Title", isCompleted: true),
+        ItemModel(title: "Second", isCompleted: false),
+        ItemModel(title: "Second", isCompleted: false),
+        ItemModel(title: "Second", isCompleted: true),
         ItemModel(title: "Second", isCompleted: false)
     ]
     let todos = toDoListMock
@@ -41,21 +44,21 @@ struct MainView: View {
                     ForEach(item) { item in
                         ListRowView(item: item)
                     }
-                    .listStyle(.sidebar)
-                    .navigationTitle(Text("My day"))
-                    .navigationBarTitleDisplayMode(.inline)
-                    
                 }
-            }
-            // Add button
-            HStack(alignment: .bottom) {
-                Spacer()
-                VStack {
+                HStack(alignment: .bottom) {
                     Spacer()
-                    AddButtonView()
-                    //                            .padding(.bottom, 40)
+                    VStack {
+                        Spacer()
+                        AddButtonView()
+//                            .padding(.bottom, 40)
+                    }
                 }
             }
+            .listStyle(.inset)
+            .navigationTitle(Text("My day"))
+            .navigationBarTitleDisplayMode(.inline)
+            // Add button
+          
         }
     }
     

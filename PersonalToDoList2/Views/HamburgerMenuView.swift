@@ -9,22 +9,22 @@ import SwiftUI
 
 struct HamburgerMenuView: View {
     var body: some View {
-        NavigationStack {
-            Text("")
-                .toolbar {
-                    ToolbarItem(placement: .topBarLeading) {
-                        Button(action: {
-                            
-                        }, label: {
-                            Image(systemName: "line.3.horizontal")
-                        })
-                    }
-                    //            ToolbarItem(placement: .topBarLeading) {
-                    //                EditButton()
-                    //            }
+        
+        Text("")
+            .toolbar {
+                ToolbarItem(placement: .topBarLeading) {
+                    Button(action: {
+                        
+                    }, label: {
+                        Image(systemName: "line.3.horizontal")
+                    })
                 }
-                .foregroundStyle(.primary)
-        }
+                //            ToolbarItem(placement: .topBarLeading) {
+                //                EditButton()
+                //            }
+            }
+            .foregroundStyle(.primary)
+        
     }
 }
 

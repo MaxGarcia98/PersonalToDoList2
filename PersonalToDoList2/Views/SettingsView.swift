@@ -19,7 +19,6 @@ struct SettingsView: View {
                         }, label: {
                             Image(systemName: "gearshape")
                                 .foregroundStyle(Color.primary)
-                                .fontWeight(.bold)
                         })
                     }
                 }
