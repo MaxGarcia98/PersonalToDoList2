@@ -17,11 +17,11 @@ class ListViewModel: ObservableObject {
     
     func getItems() {
         let newItems = [
-            ItemModel(title: "First Title", isCompleted: true),
-            ItemModel(title: "Second", isCompleted: false),
-            ItemModel(title: "Second", isCompleted: false),
-            ItemModel(title: "Second", isCompleted: true),
-            ItemModel(title: "Second", isCompleted: false)
+            ItemModel(title: "First Title", description: "hi", isCompleted: true),
+            ItemModel(title: "Second", description: "hi", isCompleted: false),
+            ItemModel(title: "Second", description: "hi", isCompleted: false),
+            ItemModel(title: "Second", description: "hi", isCompleted: true),
+            ItemModel(title: "Second", description: "hi", isCompleted: false)
         ]
         items.append(contentsOf: newItems)
     }
@@ -34,8 +34,8 @@ class ListViewModel: ObservableObject {
         items.move(fromOffsets: from, toOffset: to)
     }
     
-    func addItem(title: String) {
-        let newItem = ItemModel(title: title, isCompleted: false)
+    func addItem(title: String, description: String) {
+        let newItem = ItemModel(title: title, description: description, isCompleted: false)
         items.append(newItem)
     }
     

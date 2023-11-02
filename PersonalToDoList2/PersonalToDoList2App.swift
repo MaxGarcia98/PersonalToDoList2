@@ -11,13 +11,25 @@ import SwiftData
 @main
 struct PersonalToDoList2App: App {
     
+    let modelContainer: ModelContainer
+    
+    init() {
+        do {
+            modelContainer = try ModelContainer(for: ItemModel.self)
+        } catch {
+            fatalError("Could not initialize ModelContainer")
+        }
+    }
+    
     @StateObject var listViewModel: ListViewModel = ListViewModel()
     
     var body: some Scene {
         WindowGroup {
             NavigationStack {
                 MainView()
+                    
             }
+            .modelContainer(for: ItemModel.self)
             .environmentObject(listViewModel)
         }
     }

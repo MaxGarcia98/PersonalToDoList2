@@ -47,15 +47,14 @@ struct AddButtonView: View {
 struct AddItemViewButton: View {
     
     @Environment(\.dismiss) var dismiss
+    @Environment(\.modelContext) var context
+//    @State private var item = ItemModel()
     @EnvironmentObject var listViewModel: ListViewModel
-    @State var datePicked: Date = .now
+    @State private var datePicked: Date = .now
     @State var addLikeToDoText: String = ""
     @State var descriptionText: String = ""
-//    @Binding var showAddSheet: Bool
-   
     @FocusState private var keyboardFocused: Bool
-//    @State var userAddedToDoArray: [String] = []
-//    @State var userAddedToDo = ""
+
     
     var body: some View {
         
@@ -85,13 +84,13 @@ struct AddItemViewButton: View {
             HStack {
                 // CALENDER button //
                 Button(action: {
- 
                 }, label: {
                     Image(systemName: "calendar")
                     Text("No date")
                     
                 })
                 .modifier(MenuButtonStyle())
+                
                 
                 // Menu section for the PRIORITY button //
                 Menu {
@@ -106,6 +105,7 @@ struct AddItemViewButton: View {
                 }
                 .modifier(MenuButtonStyle())
                 
+                
                 // Menu section for the REMINDER button //
                 Menu {
                     Button("High") {}
@@ -113,6 +113,7 @@ struct AddItemViewButton: View {
                     Label("Reminder", systemImage: "alarm")
                 }
                 .modifier(MenuButtonStyle())
+                
                 
                 // Menu section for the MORE button //
                 Menu {
@@ -130,6 +131,7 @@ struct AddItemViewButton: View {
                 
                 Spacer()
                 
+                
                 // Add item button
                 Button(action: {
                     saveToDo()
@@ -144,12 +146,10 @@ struct AddItemViewButton: View {
                 })
             }
             .padding(8)
-            Spacer()
-            
             
             Spacer()
                 .frame(height: 20)
-            
+    
             Divider()
                 .background(Color(.systemGray2))
             
@@ -158,8 +158,8 @@ struct AddItemViewButton: View {
     }
     
     func saveToDo() {
-        listViewModel.addItem(title: addLikeToDoText)
-    
+        listViewModel.addItem(title: addLikeToDoText, description: descriptionText)
+        
     }
 }
 
@@ -178,4 +178,5 @@ struct MenuButtonStyle: ViewModifier {
 
 #Preview {
     AddButtonView()
+        .modelContainer(for: ItemModel.self)
 }

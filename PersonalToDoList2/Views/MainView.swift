@@ -35,6 +35,7 @@ struct MainView: View {
                     }
                 }
             }
+            .listRowSeparatorTint(.red)
             .listStyle(.plain)
             .navigationTitle(Text("My day"))
             .navigationBarTitleDisplayMode(.inline)
@@ -45,6 +46,7 @@ struct MainView: View {
 #Preview {
     NavigationStack {
         MainView()
+            .modelContainer(for: ItemModel.self)
             .environmentObject(ListViewModel())
     }
 }
