@@ -11,30 +11,17 @@ struct MainView: View {
     var body: some View {
         NavigationStack {
             SettingsView()
-            //
-            //            VStack {
-            //                HStack {
-            //                    TextField("Add an item", text: $input)
-            //                    Button("Add item") {
-            //                      addItem()
-            //                    }
-            //                }
-            //                List{
-            //                    ForEach (items) { item in
-            //                        Text(item.name)
-            //                    }.onDelete(perform: { indexSet in
-            //                        for index in indexSet{
-            //                            deleteItem(items[index])
-            //                        }
-            //                    })
-            //                }
-            //            }.padding()
-            //
+
             HamburgerMenuView()
             ZStack {
                 List {
                     ForEach(listViewModel.items) { item in
                         ListRowView(item: item)
+                            .onTapGesture {
+                                withAnimation(.linear) {
+                                    listViewModel.updateItem(item: item)
+                                }
+                            }
                     }
                     .onDelete(perform: listViewModel.deleteItem)
                     .onMove(perform: listViewModel.moveItem)
@@ -48,7 +35,7 @@ struct MainView: View {
                     }
                 }
             }
-            .listStyle(.inset)
+            .listStyle(.plain)
             .navigationTitle(Text("My day"))
             .navigationBarTitleDisplayMode(.inline)
         }
