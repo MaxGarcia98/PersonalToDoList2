@@ -14,7 +14,6 @@ struct PersonalToDoList2App: App {
         WindowGroup {
             NavigationStack {
                 MainView()
-                    .modelContainer(for: toDoItem.self)
             }
         }
     }

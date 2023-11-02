@@ -182,5 +182,4 @@ struct MenuButtonStyle: ViewModifier {
 
 #Preview {
     AddButtonView()
-        .modelContainer(for: toDoItem.self)
 }

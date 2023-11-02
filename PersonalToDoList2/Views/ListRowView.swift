@@ -9,12 +9,13 @@ import SwiftUI
 
 struct ListRowView: View {
     
-    let title: String
+    let item: ItemModel
     
     var body: some View {
         HStack {
-            Image(systemName: "checkmark.circle")
-            Text(title)
+            Image(systemName: item.isCompleted ? "checkmark.circle" : "circle")
+                .foregroundStyle(item.isCompleted ? .green : .red)
+            Text(item.title)
             Spacer()
         }
         .padding()
@@ -22,6 +23,6 @@ struct ListRowView: View {
     }
 }
 
-#Preview {
-    ListRowView(title: "First")
-}
+//#Preview {
+//    ListRowView(item: "First")
+//}

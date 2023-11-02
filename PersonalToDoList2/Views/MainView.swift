@@ -6,7 +6,10 @@ struct MainView: View {
     
     @State var settingsToggle: Bool = false
     @State var searchedText = ""
-    @State var toDoAdd = [toDoListMock]
+    @State var item: [ItemModel] = [
+        ItemModel(title: "First Title", isCompleted: true),
+        ItemModel(title: "Second", isCompleted: false)
+    ]
     let todos = toDoListMock
     
     var body: some View {
@@ -31,57 +34,47 @@ struct MainView: View {
             //                }
             //            }.padding()
             //
-            
+            HamburgerMenuView()
             ZStack {
                 
                 List {
-                    ForEach(todos, id: \.self) { todo in
-                        NavigationLink(destination: TodayListView(item: todo)) {
-                            Text(todo)
-                        }
+                    ForEach(item) { item in
+                        ListRowView(item: item)
                     }
-                }
-                
-                HStack(alignment: .bottom) {
-                    Spacer()
-                    VStack {
-                        Spacer()
-                        AddButtonView()
-                            .padding(.bottom, 40)
-                    }
-                }
-            }
-            .listStyle(.sidebar)
-            
-            
-            
-        }
-        
-        .navigationTitle(Text("My day"))
-        .navigationBarTitleDisplayMode(.inline)
-        .toolbar {
-            ToolbarItem(placement: .topBarLeading) {
-                Button(action: {
+                    .listStyle(.sidebar)
+                    .navigationTitle(Text("My day"))
+                    .navigationBarTitleDisplayMode(.inline)
                     
-                }, label: {
-                    Image(systemName: "line.3.horizontal")
-                })
+                }
             }
-            //            ToolbarItem(placement: .topBarLeading) {
-            //                EditButton()
-            //            }
+            // Add button
+            HStack(alignment: .bottom) {
+                Spacer()
+                VStack {
+                    Spacer()
+                    AddButtonView()
+                    //                            .padding(.bottom, 40)
+                }
+            }
         }
-        .foregroundStyle(.primary)
     }
     
     
-    func deleteItem(indexSet: IndexSet) {
-        toDoAdd.remove(atOffsets: indexSet)
-    }
     
-    func moveItem(from: IndexSet, to: Int) {
-        toDoAdd.move(fromOffsets: from, toOffset: to)
-    }
+    
+    
+    
+    
+    
+    
+    
+    //    func deleteItem(indexSet: IndexSet) {
+    //        toDoAdd.remove(atOffsets: indexSet)
+    //    }
+    //
+    //    func moveItem(from: IndexSet, to: Int) {
+    //        toDoAdd.move(fromOffsets: from, toOffset: to)
+    //    }
     
     //    func addItem() {
     //        let item = Item(name: input)
@@ -94,6 +87,7 @@ struct MainView: View {
     //       }
     //}
 }
+
 #Preview {
     NavigationStack {
         MainView()
