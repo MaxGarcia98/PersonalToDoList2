@@ -46,9 +46,12 @@ struct AddButtonView: View {
 
 struct AddItemViewButton: View {
     
+    @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var listViewModel: ListViewModel
     @State var datePicked: Date = .now
     @State var addLikeToDoText: String = ""
     @State var descriptionText: String = ""
+//    @Binding var showAddSheet: Bool
    
     @FocusState private var keyboardFocused: Bool
 //    @State var userAddedToDoArray: [String] = []
@@ -126,17 +129,23 @@ struct AddItemViewButton: View {
                 .modifier(MenuButtonStyle())
                 
                 Spacer()
+                
+                // Add item button
+                Button(action: {
+                    saveToDo()
+                    dismiss()
+                }, label: {
+                    Image(systemName: "plus")
+                        .foregroundStyle(.white)
+                        .padding(5)
+                        .background(Color.blue)
+                        .clipShape(RoundedRectangle(cornerRadius: 5))
+                    
+                })
             }
             .padding(8)
-            //            HStack {
-            //                Menu("Priority") {
-            //                    Button("button", action: choosePriority)
-            //                }
-            //                .font(.subheadline)
-            //                .foregroundStyle(Color(.systemGray2))
-            //                Spacer()
-            //            }
-            //            .padding(8)
+            Spacer()
+            
             
             Spacer()
                 .frame(height: 20)
@@ -145,25 +154,12 @@ struct AddItemViewButton: View {
                 .background(Color(.systemGray2))
             
             Spacer()
-            
-//            ForEach(userAddedToDoArray, id: \.self) { item in
-//                Text(userAddedToDo)
-//            }
         }
-        
-        //        HStack {
-        //            Image(systemName: "calendar")
-        //            Image(systemName: "flag.fill")
-        //            Image(systemName: "tag.fill")
-        //            Spacer()
-        //            Image(systemName: "paperplane.fill")
-        //        }
-        //        .padding()
-        //        .foregroundStyle(Color(.systemGray2))
     }
     
     func saveToDo() {
-        
+        listViewModel.addItem(title: addLikeToDoText)
+    
     }
 }
 

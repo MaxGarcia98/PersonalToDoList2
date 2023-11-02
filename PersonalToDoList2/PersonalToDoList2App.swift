@@ -10,11 +10,15 @@ import SwiftData
 
 @main
 struct PersonalToDoList2App: App {
+    
+    @StateObject var listViewModel: ListViewModel = ListViewModel()
+    
     var body: some Scene {
         WindowGroup {
             NavigationStack {
                 MainView()
             }
+            .environmentObject(listViewModel)
         }
     }
 }

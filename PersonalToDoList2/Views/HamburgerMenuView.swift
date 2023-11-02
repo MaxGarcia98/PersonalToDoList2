@@ -9,7 +9,6 @@ import SwiftUI
 
 struct HamburgerMenuView: View {
     var body: some View {
-        
         Text("")
             .toolbar {
                 ToolbarItem(placement: .topBarLeading) {
@@ -24,7 +23,6 @@ struct HamburgerMenuView: View {
                 //            }
             }
             .foregroundStyle(.primary)
-        
     }
 }
 
