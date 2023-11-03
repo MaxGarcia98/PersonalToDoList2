@@ -33,7 +33,7 @@ struct AddButtonView: View {
     })
         .padding()
         .sheet(isPresented: $showAddSheet, content: {
-            AddItemViewButton()
+            AddItemViewButtonMenu()
                 .presentationDetents([.medium])
         })
        
@@ -44,7 +44,7 @@ struct AddButtonView: View {
 
 
 
-struct AddItemViewButton: View {
+struct AddItemViewButtonMenu: View {
     
     @Environment(\.dismiss) var dismiss
     @Environment(\.modelContext) var context
@@ -54,7 +54,8 @@ struct AddItemViewButton: View {
     @State var addLikeToDoText: String = ""
     @State var descriptionText: String = ""
     @FocusState private var keyboardFocused: Bool
-
+    let priority = ["None", "Low", "Medium", "High"]
+    @State private var showCalendarView = false
     
     var body: some View {
         
@@ -82,16 +83,22 @@ struct AddItemViewButton: View {
                 .frame(height: 40)
             
             HStack {
-                // CALENDER button //
+//                // CALENDER button //
+                
                 Button(action: {
+                    showCalendarView.toggle()
                 }, label: {
                     Image(systemName: "calendar")
-                    Text("No date")
-                    
+                })
+                .sheet(isPresented: $showCalendarView, content: {
+                    CalendarView()
+//                        .presentationDetents([.medium])
                 })
                 .modifier(MenuButtonStyle())
                 
                 
+                
+                    
                 // Menu section for the PRIORITY button //
                 Menu {
                     Section {
@@ -99,7 +106,9 @@ struct AddItemViewButton: View {
                     }
                     Button("Low") {}
                     Button("Medium") {}
-                    Button("High") {}
+                    Button("High") {
+                        
+                    }
                 } label: {
                     Label("Priority", systemImage: "flag")
                 }
@@ -161,6 +170,8 @@ struct AddItemViewButton: View {
         listViewModel.addItem(title: addLikeToDoText, description: descriptionText)
         
     }
+    
+
 }
 
 struct MenuButtonStyle: ViewModifier {

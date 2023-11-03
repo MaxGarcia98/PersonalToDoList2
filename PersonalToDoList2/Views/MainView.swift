@@ -15,6 +15,13 @@ struct MainView: View {
             HamburgerMenuView()
             ZStack {
                 List {
+//                    HStack {
+//                        Spacer()
+//                        Text("Priority")
+//                            .font(.headline)
+//                            .fontWeight(.medium)
+//                            .padding(.horizontal, 0)
+//                    }
                     ForEach(listViewModel.items) { item in
                         ListRowView(item: item)
                             .onTapGesture {
