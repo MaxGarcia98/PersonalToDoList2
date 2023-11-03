@@ -10,7 +10,7 @@ struct MainView: View {
     
     var body: some View {
         NavigationStack {
-            SettingsView()
+//            SettingsView()
 
             HamburgerMenuView()
             ZStack {
@@ -25,6 +25,10 @@ struct MainView: View {
                     }
                     .onDelete(perform: listViewModel.deleteItem)
                     .onMove(perform: listViewModel.moveItem)
+                }
+                .toolbar {
+                    EditButton()
+                        .foregroundStyle(.primary)
                 }
                 // Add button
                 HStack(alignment: .bottom) {
