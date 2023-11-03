@@ -15,7 +15,7 @@ struct ListRowView: View {
         HStack(alignment: .top) {
             Image(systemName: item.isCompleted ? "checkmark.circle" : "circle")
                 .foregroundStyle(item.isCompleted ? .green : .red)
-                .padding(.top, 4)
+                .padding(.top, 0)
             
             VStack(alignment: .leading) {
                 Text(item.title)

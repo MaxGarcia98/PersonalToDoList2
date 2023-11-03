@@ -20,9 +20,11 @@ struct CalendarView: View {
                 }
                 .foregroundStyle(.primary)
                 .padding(.horizontal)
+                .padding(.top)
             }
             DatePicker("Choose a date:", selection: $datePicked)
                 .datePickerStyle(.graphical)
+            Spacer()
         }
     }
 }

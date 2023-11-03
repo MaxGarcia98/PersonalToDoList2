@@ -35,6 +35,7 @@ struct AddButtonView: View {
         .sheet(isPresented: $showAddSheet, content: {
             AddItemViewButtonMenu()
                 .presentationDetents([.medium])
+                .presentationBackground(.ultraThinMaterial)
         })
        
     }
@@ -50,7 +51,7 @@ struct AddItemViewButtonMenu: View {
     @Environment(\.modelContext) var context
 //    @State private var item = ItemModel()
     @EnvironmentObject var listViewModel: ListViewModel
-    @State private var datePicked: Date = .now
+//    @Binding var datePicked: Date = .now
     @State var addLikeToDoText: String = ""
     @State var descriptionText: String = ""
     @FocusState private var keyboardFocused: Bool
@@ -92,6 +93,7 @@ struct AddItemViewButtonMenu: View {
                 })
                 .sheet(isPresented: $showCalendarView, content: {
                     CalendarView()
+                        .presentationBackground(.ultraThinMaterial)
 //                        .presentationDetents([.medium])
                 })
                 .modifier(MenuButtonStyle())
