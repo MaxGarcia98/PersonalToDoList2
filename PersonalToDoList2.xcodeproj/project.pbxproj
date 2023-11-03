@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		36000F322AF3E1200012A70D /* ToDoListItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36000F312AF3E1200012A70D /* ToDoListItemViewModel.swift */; };
-		36000F342AF3EE530012A70D /* HamburgerMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36000F332AF3EE530012A70D /* HamburgerMenuView.swift */; };
+		36000F342AF3EE530012A70D /* ProfileMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36000F332AF3EE530012A70D /* ProfileMenuView.swift */; };
 		3613A14B2ADDD6C8005CFB95 /* CalendarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3613A14A2ADDD6C8005CFB95 /* CalendarView.swift */; };
 		3613A14D2ADDDD3F005CFB95 /* ImportantToDosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3613A14C2ADDDD3F005CFB95 /* ImportantToDosView.swift */; };
 		36407C382AE04FAC00E4C5ED /* mock.json in Resources */ = {isa = PBXBuildFile; fileRef = 36407C372AE04FAC00E4C5ED /* mock.json */; };
@@ -34,7 +34,7 @@
 
 /* Begin PBXFileReference section */
 		36000F312AF3E1200012A70D /* ToDoListItemViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListItemViewModel.swift; sourceTree = "<group>"; };
-		36000F332AF3EE530012A70D /* HamburgerMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HamburgerMenuView.swift; sourceTree = "<group>"; };
+		36000F332AF3EE530012A70D /* ProfileMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileMenuView.swift; sourceTree = "<group>"; };
 		3613A14A2ADDD6C8005CFB95 /* CalendarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarView.swift; sourceTree = "<group>"; };
 		3613A14C2ADDDD3F005CFB95 /* ImportantToDosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImportantToDosView.swift; sourceTree = "<group>"; };
 		36407C372AE04FAC00E4C5ED /* mock.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = mock.json; sourceTree = "<group>"; };
@@ -118,7 +118,7 @@
 				3613A14C2ADDDD3F005CFB95 /* ImportantToDosView.swift */,
 				3683A26B2AD9DC6A009588F8 /* AppIconSettingsView.swift */,
 				368E788B2AD9CCA800FF31DC /* GeneralSettingsView.swift */,
-				36000F332AF3EE530012A70D /* HamburgerMenuView.swift */,
+				36000F332AF3EE530012A70D /* ProfileMenuView.swift */,
 				368E78872AD9AFFF00FF31DC /* ListRowView.swift */,
 				368E78742AD9A5EA00FF31DC /* MainView.swift */,
 				3683A26D2AD9DC9F009588F8 /* NavigationMenuSettingsView.swift */,
@@ -226,7 +226,7 @@
 				3683A2722AD9DF2E009588F8 /* ItemModel.swift in Sources */,
 				3683A2702AD9DCD0009588F8 /* QuickAddSettingsView.swift in Sources */,
 				368E78732AD9A5EA00FF31DC /* PersonalToDoList2App.swift in Sources */,
-				36000F342AF3EE530012A70D /* HamburgerMenuView.swift in Sources */,
+				36000F342AF3EE530012A70D /* ProfileMenuView.swift in Sources */,
 				368E78882AD9AFFF00FF31DC /* ListRowView.swift in Sources */,
 				368E788C2AD9CCA800FF31DC /* GeneralSettingsView.swift in Sources */,
 				36F99F8D2ADF276400C5809F /* ToDo'sList.swift in Sources */,

@@ -7,12 +7,12 @@ struct MainView: View {
     @EnvironmentObject var listViewModel: ListViewModel
     @State var settingsToggle: Bool = false
     @State var searchedText = ""
+    @State var profileToggle = false
     
     var body: some View {
         NavigationStack {
 //            SettingsView()
-
-            HamburgerMenuView()
+            ProfileMenuView()
             ZStack {
                 List {
 //                    HStack {
@@ -33,10 +33,7 @@ struct MainView: View {
                     .onDelete(perform: listViewModel.deleteItem)
                     .onMove(perform: listViewModel.moveItem)
                 }
-                .toolbar {
-                    EditButton()
-                        .foregroundStyle(.primary)
-                }
+                
                 // Add button
                 HStack(alignment: .bottom) {
                     Spacer()
@@ -46,10 +43,13 @@ struct MainView: View {
                     }
                 }
             }
-            .listRowSeparatorTint(.red)
             .listStyle(.plain)
             .navigationTitle(Text("My day"))
             .navigationBarTitleDisplayMode(.inline)
+            .toolbar {
+                    EditButton()
+                        .foregroundStyle(.primary)
+            }
         }
     }
 }
