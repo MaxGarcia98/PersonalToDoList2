@@ -30,6 +30,7 @@ struct ListRowView: View {
            
             Spacer()
             
+            Text(item.priority)
         }
         .padding(.horizontal)
         
@@ -38,5 +39,5 @@ struct ListRowView: View {
 }
 
 #Preview {
-    ListRowView(item: ItemModel(title: "he", description: "bruh", isCompleted: true))
+    ListRowView(item: ItemModel(title: "he", description: "bruh", isCompleted: true, priority: "high"))
 }
