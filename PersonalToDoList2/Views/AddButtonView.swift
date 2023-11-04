@@ -37,7 +37,6 @@ struct AddButtonView: View {
                 .presentationDetents([.medium])
                 .presentationBackground(.ultraThinMaterial)
         })
-       
     }
 }
 
@@ -46,7 +45,6 @@ struct AddButtonView: View {
 
 
 struct AddItemViewButtonMenu: View {
-    
     @Environment(\.dismiss) var dismiss
     @Environment(\.modelContext) var context
 //    @State private var item = ItemModel()
@@ -57,6 +55,7 @@ struct AddItemViewButtonMenu: View {
     @FocusState private var keyboardFocused: Bool
     let priority = ["None", "Low", "Medium", "High"]
     @State private var showCalendarView = false
+    @EnvironmentObject var dateManager: DateManager
     
     var body: some View {
         
@@ -70,7 +69,6 @@ struct AddItemViewButtonMenu: View {
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.01) {
                         keyboardFocused = true
                     }
-                    
                 }
                 .padding(12)
             
@@ -84,11 +82,11 @@ struct AddItemViewButtonMenu: View {
                 .frame(height: 40)
             
             HStack {
-//                // CALENDER button //
-                
+                // CALENDER button //
                 Button(action: {
                     showCalendarView.toggle()
                 }, label: {
+                    
                     Image(systemName: "calendar")
                 })
                 .sheet(isPresented: $showCalendarView, content: {

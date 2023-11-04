@@ -2,7 +2,7 @@ import Foundation
 import SwiftData
 
 @Model
-class ItemModel: Identifiable {
+class ItemModel: Identifiable, ObservableObject {
     let id: String
     let title: String
     let tododescription: String
@@ -29,3 +29,6 @@ class ItemModel: Identifiable {
     }
 }
 
+class DateManager: ObservableObject {
+    @Published var dateChosen = Date()
+}

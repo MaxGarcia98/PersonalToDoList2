@@ -29,6 +29,7 @@
 		368E788A2AD9B47800FF31DC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368E78892AD9B47800FF31DC /* SettingsView.swift */; };
 		368E788C2AD9CCA800FF31DC /* GeneralSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368E788B2AD9CCA800FF31DC /* GeneralSettingsView.swift */; };
 		368E788E2AD9D0A100FF31DC /* AccountSettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 368E788D2AD9D0A100FF31DC /* AccountSettingsView.swift */; };
+		36AD6A572AF67BC7001BCF75 /* CalendarButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36AD6A562AF67BC7001BCF75 /* CalendarButtonView.swift */; };
 		36F99F8D2ADF276400C5809F /* ToDo'sList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36F99F8C2ADF276400C5809F /* ToDo'sList.swift */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +57,7 @@
 		368E78892AD9B47800FF31DC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		368E788B2AD9CCA800FF31DC /* GeneralSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeneralSettingsView.swift; sourceTree = "<group>"; };
 		368E788D2AD9D0A100FF31DC /* AccountSettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountSettingsView.swift; sourceTree = "<group>"; };
+		36AD6A562AF67BC7001BCF75 /* CalendarButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarButtonView.swift; sourceTree = "<group>"; };
 		36F99F8C2ADF276400C5809F /* ToDo'sList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ToDo'sList.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +119,7 @@
 				36F99F8C2ADF276400C5809F /* ToDo'sList.swift */,
 				3613A14C2ADDDD3F005CFB95 /* ImportantToDosView.swift */,
 				3683A26B2AD9DC6A009588F8 /* AppIconSettingsView.swift */,
+				36AD6A562AF67BC7001BCF75 /* CalendarButtonView.swift */,
 				368E788B2AD9CCA800FF31DC /* GeneralSettingsView.swift */,
 				36000F332AF3EE530012A70D /* ProfileMenuView.swift */,
 				368E78872AD9AFFF00FF31DC /* ListRowView.swift */,
@@ -224,6 +227,7 @@
 				368E78752AD9A5EA00FF31DC /* MainView.swift in Sources */,
 				3613A14B2ADDD6C8005CFB95 /* CalendarView.swift in Sources */,
 				3683A2722AD9DF2E009588F8 /* ItemModel.swift in Sources */,
+				36AD6A572AF67BC7001BCF75 /* CalendarButtonView.swift in Sources */,
 				3683A2702AD9DCD0009588F8 /* QuickAddSettingsView.swift in Sources */,
 				368E78732AD9A5EA00FF31DC /* PersonalToDoList2App.swift in Sources */,
 				36000F342AF3EE530012A70D /* ProfileMenuView.swift in Sources */,

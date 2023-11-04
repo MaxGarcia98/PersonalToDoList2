@@ -23,11 +23,10 @@ struct ProfileMenuView: View {
             }
             .sheet(isPresented: $profileShown, content: {
                 VStack {
-                    Text("hd")
-                    Text("df")
                     SettingsView()
                 }
             })
+        Text("fd")
     }
 }
 
