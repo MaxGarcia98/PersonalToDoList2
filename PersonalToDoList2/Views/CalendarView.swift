@@ -10,6 +10,7 @@ import SwiftUI
 struct CalendarView: View {
     @State var datePicked = Date()
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var listViewModel: ListViewModel
     @StateObject var dateManager = DateManager()
     
     var body: some View {
@@ -33,4 +34,5 @@ struct CalendarView: View {
 
 #Preview {
     CalendarView()
+        .environmentObject(ListViewModel())
 }

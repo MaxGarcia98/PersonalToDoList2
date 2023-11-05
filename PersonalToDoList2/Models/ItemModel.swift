@@ -14,7 +14,7 @@ class ItemModel: Identifiable, ObservableObject {
          title: String,
          description: String,
          isCompleted: Bool,
-         date: Date = .now,
+         date: Date,
          priority: String) {
         self.id = id
         self.title = title
@@ -25,10 +25,10 @@ class ItemModel: Identifiable, ObservableObject {
     }
     
     func updateCompletion() -> ItemModel {
-        return ItemModel(id: id, title: title, description: tododescription, isCompleted: !isCompleted, priority: priority)
+        return ItemModel(id: id, title: title, description: tododescription, isCompleted: !isCompleted, date: date, priority: priority)
     }
 }
-
-class DateManager: ObservableObject {
-    @Published var dateChosen = Date()
-}
+//
+//class DateManager: ObservableObject {
+//    @Published var dateChosen = Date()
+//}

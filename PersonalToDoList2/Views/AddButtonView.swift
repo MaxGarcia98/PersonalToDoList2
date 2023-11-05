@@ -11,6 +11,7 @@ import SwiftData
 struct AddButtonView: View {
     @State var showAddSheet = false
     @State var buttonAnimation = false
+    @EnvironmentObject var listViewModel: ListViewModel
     let buttonPressed = UIImpactFeedbackGenerator(style: .heavy)
     
     init() {
@@ -47,15 +48,12 @@ struct AddButtonView: View {
 struct AddItemViewButtonMenu: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.modelContext) var context
-//    @State private var item = ItemModel()
     @EnvironmentObject var listViewModel: ListViewModel
-//    @Binding var datePicked: Date = .now
     @State var addLikeToDoText: String = ""
     @State var descriptionText: String = ""
     @FocusState private var keyboardFocused: Bool
     let priority = ["None", "Low", "Medium", "High"]
     @State private var showCalendarView = false
-    @EnvironmentObject var dateManager: DateManager
     
     var body: some View {
         
@@ -86,15 +84,15 @@ struct AddItemViewButtonMenu: View {
                 Button(action: {
                     showCalendarView.toggle()
                 }, label: {
-                    
                     Image(systemName: "calendar")
                 })
+                .modifier(MenuButtonStyle())
                 .sheet(isPresented: $showCalendarView, content: {
                     CalendarView()
                         .presentationBackground(.ultraThinMaterial)
 //                        .presentationDetents([.medium])
                 })
-                .modifier(MenuButtonStyle())
+                
                 
                 
                 
@@ -145,6 +143,7 @@ struct AddItemViewButtonMenu: View {
                 Button(action: {
                     saveToDo()
                     dismiss()
+                    
                 }, label: {
                     Image(systemName: "plus")
                         .foregroundStyle(.white)
@@ -167,10 +166,13 @@ struct AddItemViewButtonMenu: View {
     }
     
     func saveToDo() {
-        listViewModel.addItem(title: addLikeToDoText, description: descriptionText)
+        listViewModel.addItem(title: addLikeToDoText, description: descriptionText, date: .now)
         
     }
     
+    func saveDateChosen() {
+      
+    }
 
 }
 
@@ -190,4 +192,5 @@ struct MenuButtonStyle: ViewModifier {
 #Preview {
     AddButtonView()
         .modelContainer(for: ItemModel.self)
+        .environmentObject(ListViewModel())
 }

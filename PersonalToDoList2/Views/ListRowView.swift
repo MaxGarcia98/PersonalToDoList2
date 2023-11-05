@@ -10,6 +10,13 @@ import SwiftUI
 struct ListRowView: View {
     
     let item: ItemModel
+    @State var dateChosen = Date()
+    
+    var dateFormatter: DateFormatter {
+            let formatter = DateFormatter()
+            formatter.dateStyle = .short
+            return formatter
+        }
     
     var body: some View {
         HStack(alignment: .top) {
@@ -26,6 +33,10 @@ struct ListRowView: View {
                         .font(.caption)
                         .foregroundStyle(.secondary)
                 }
+        
+                    Text("\(dateChosen, formatter: dateFormatter)")
+                    .font(.caption)
+                
             }
            
             Spacer()
@@ -40,5 +51,5 @@ struct ListRowView: View {
 }
 
 #Preview {
-    ListRowView(item: ItemModel(title: "he", description: "bruh", isCompleted: true, priority: "!!!"))
+    ListRowView(item: ItemModel(title: "he", description: "bruh", isCompleted: true, date: .now, priority: "!!!"))
 }
