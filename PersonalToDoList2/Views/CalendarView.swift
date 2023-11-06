@@ -8,10 +8,10 @@
 import SwiftUI
 
 struct CalendarView: View {
-    @State var datePicked = Date()
+    @State var selectDate = Date()
     @Environment(\.dismiss) var dismiss
     @EnvironmentObject var listViewModel: ListViewModel
-    @StateObject var dateManager = DateManager()
+    
     
     var body: some View {
         VStack {
@@ -24,11 +24,12 @@ struct CalendarView: View {
                 .padding(.horizontal)
                 .padding(.top)
             }
-            DatePicker("Choose a date:", selection: $dateManager.dateChosen)
+            
+            DatePicker("", selection: $selectDate)
                 .datePickerStyle(.graphical)
             Spacer()
         }
-        .environmentObject(dateManager)
+     
     }
 }
 

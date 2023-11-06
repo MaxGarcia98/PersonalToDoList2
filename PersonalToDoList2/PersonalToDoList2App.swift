@@ -27,7 +27,6 @@ struct PersonalToDoList2App: App {
         WindowGroup {
             NavigationStack {
                 MainView()
-                    
             }
             .modelContainer(for: ItemModel.self)
             .environmentObject(listViewModel)

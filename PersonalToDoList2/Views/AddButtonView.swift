@@ -13,6 +13,7 @@ struct AddButtonView: View {
     @State var buttonAnimation = false
     @EnvironmentObject var listViewModel: ListViewModel
     let buttonPressed = UIImpactFeedbackGenerator(style: .heavy)
+    @Binding var dateChosen: Date 
     
     init() {
         buttonPressed.prepare()
@@ -34,7 +35,7 @@ struct AddButtonView: View {
     })
         .padding()
         .sheet(isPresented: $showAddSheet, content: {
-            AddItemViewButtonMenu()
+            AddItemViewButtonMenu(dateChosen: $dateChosen)
                 .presentationDetents([.medium])
                 .presentationBackground(.ultraThinMaterial)
         })
@@ -54,6 +55,7 @@ struct AddItemViewButtonMenu: View {
     @FocusState private var keyboardFocused: Bool
     let priority = ["None", "Low", "Medium", "High"]
     @State private var showCalendarView = false
+    @Binding var dateChosen: Date 
     
     var body: some View {
         
@@ -88,15 +90,11 @@ struct AddItemViewButtonMenu: View {
                 })
                 .modifier(MenuButtonStyle())
                 .sheet(isPresented: $showCalendarView, content: {
-                    CalendarView()
+                    CalendarView(selectDate: dateChosen)
                         .presentationBackground(.ultraThinMaterial)
 //                        .presentationDetents([.medium])
                 })
-                
-                
-                
-                
-                    
+ 
                 // Menu section for the PRIORITY button //
                 Menu {
                     Section {
@@ -166,7 +164,7 @@ struct AddItemViewButtonMenu: View {
     }
     
     func saveToDo() {
-        listViewModel.addItem(title: addLikeToDoText, description: descriptionText, date: .now)
+        listViewModel.addItem(title: addLikeToDoText, description: descriptionText, date: dateChosen)
         
     }
     
